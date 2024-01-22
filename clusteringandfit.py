@@ -218,6 +218,7 @@ cluster_centers = kmeans.cluster_centers_
 sil_score = silhouette_score(df_clusters[['Years', df_clusters.columns[1]]], cluster_labels)
 print(f"Silhouette Score: {sil_score}")
 
+# Code for fitting starts here
 # Add jitter to both x and y coordinates for better scattering
 jitter_x = np.random.uniform(low=-0.9, high=0.8, size=len(df2))
 jitter_y = np.random.uniform(low=-0.5, high=0.4, size=len(df2))
@@ -227,7 +228,6 @@ df2["Jittered_Agriculture_GDP"] = df2["Agriculture,forestry,fishing(% of GDP)"] 
 # Scatter plot with increased marker size, transparency, and jittered coordinates
 plt.figure(figsize=(10, 6))
 plt.scatter(df2["Jittered_Years"], df2["Jittered_Agriculture_GDP"], s=20, alpha=0.7, marker='o', edgecolors='blue', linewidths=0.5, label='Normalized Agriculture GDP')
-
 plt.xlabel('Year')
 plt.ylabel('Normalized Agriculture, Forestry, and Fishing Value Added (% of GDP)')
 plt.title('Scatter Plot of Normalized Agriculture GDP for the United Kingdom Over the Years')
