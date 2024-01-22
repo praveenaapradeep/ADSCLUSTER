@@ -218,7 +218,7 @@ cluster_centers = kmeans.cluster_centers_
 sil_score = silhouette_score(df_clusters[['Years', df_clusters.columns[1]]], cluster_labels)
 print(f"Silhouette Score: {sil_score}")
 
-# Code for fitting starts here
+# Code for fitting ends here
 # Add jitter to both x and y coordinates for better scattering
 jitter_x = np.random.uniform(low=-0.9, high=0.8, size=len(df2))
 jitter_y = np.random.uniform(low=-0.5, high=0.4, size=len(df2))
